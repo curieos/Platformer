@@ -26,11 +26,14 @@ func _physics_process(delta):
 	
 	if actual_velocity.x > 0:
 		sprite.flip_h = false
-		sprite.play("Run")
+		if is_on_floor():
+			sprite.play("Run")
 	elif actual_velocity.x < 0:
 		sprite.flip_h = true
-		sprite.play("Run")
+		if is_on_floor():
+			sprite.play("Run")
 	else:
-		sprite.play("Idle")
+		if is_on_floor():
+			sprite.play("Idle")
 		
 	

@@ -22,7 +22,7 @@ func process_input():
 	else:
 		velocity.x *= air_speed
 		
-	if Input.is_action_pressed("Up"):
+	if Input.is_action_pressed("Jump"):
 		if is_on_floor():
 			sprite.play("Jump")
 			velocity.y = -jump_power
@@ -31,6 +31,11 @@ func process_input():
 				velocity.y -= jump_sustain
 	elif is_on_floor(): 
 		velocity.y = 0
+
+func _process(delta):
+	if !is_on_floor():
+		if velocity.y > 0:
+			sprite.play("Fall")
 
 func _physics_process(delta):
 	process_input()

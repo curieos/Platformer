@@ -1,10 +1,52 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Tiles/Scene.tres" type="TileSet" id=1]
 [ext_resource path="res://Prefabs/PC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Sprites/Background_1.png" type="Texture" id=3]
 [ext_resource path="res://Sprites/Light.png" type="Texture" id=4]
-[ext_resource path="res://Sprites/Grey_full.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Skeleton/attack000.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Skeleton/attack001.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Skeleton/attack002.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Skeleton/attack003.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Skeleton/attack004.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Skeleton/attack005.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Skeleton/attack006.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Skeleton/attack007.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Skeleton/attack008.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Skeleton/attack009.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Skeleton/attack010.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Skeleton/attack011.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Skeleton/attack012.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Skeleton/attack013.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Skeleton/attack014.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Skeleton/attack015.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Skeleton/attack016.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Skeleton/attack017.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Skeleton/idle000.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Skeleton/idle001.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Skeleton/idle002.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Skeleton/idle003.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Skeleton/idle004.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Skeleton/idle005.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Skeleton/idle006.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Skeleton/idle007.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Skeleton/idle008.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Skeleton/idle009.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Skeleton/idle010.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Grey_full.png" type="Texture" id=34]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 
@@ -44,8 +86,16 @@ position = Vector2( 95.9388, 133.879 )
 texture = ExtResource( 4 )
 shadow_enabled = true
 
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 354.468, 79.9242 )
+frames = SubResource( 1 )
+animation = "Idle"
+frame = 5
+playing = true
+flip_h = true
+
 [node name="Shadow" type="Light2D" parent="."]
 visible = false
 position = Vector2( 599.336, 345.903 )
-texture = ExtResource( 5 )
+texture = ExtResource( 34 )
 mode = 1
